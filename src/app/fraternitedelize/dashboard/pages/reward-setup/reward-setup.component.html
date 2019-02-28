@@ -1,0 +1,37 @@
+<div id="rewards">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Gerencie seus produtos</h1>
+        <div class="rewards-creator">
+          <form (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="input-label">Nome</label>
+                  <input required type="text" min="1" class="form-control reward-input" [(ngModel)]="reward.name" name="name" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="input-label">Valor</label>
+                  <input required type="tel" min="1" max="11" class="form-control reward-input" [(ngModel)]="reward.points" name="points" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-create-rwd">Criar Premio</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-reward-list></app-reward-list>
+      </div>
+    </div>
+  </div>
+</div>

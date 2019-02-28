@@ -1,0 +1,79 @@
+<div id="rewards-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3>Veja aqui sua lista de produtos</h3>
+        <div *ngFor="let usr of users | async">
+          <h4 *ngIf="admin === usr.key">Você tem {{ usr.points }} </h4>
+          <h4 *ngIf="needConfirm === true && admin === usr.key">É necessário a senha de um administrador para resgatar
+            seu prêmio, por favor, dirija-se ao balcão!</h4>
+          <div class="form-group" *ngIf="needConfirm === true && admin === usr.key">
+            <input type="password" class="form-control confirm-input" [(ngModel)]="password" name="password"
+              placeholder="PASSWORD" />
+          </div>
+        </div>
+        <div class="header">
+          <div class="row">
+            <div class="col-3">
+              <p>Valor</p>
+            </div>
+            <div class="col-5">
+              <p>Premio</p>
+            </div>
+            <div class="col-4">
+              <a *ngIf="listColapsed === true" (click)="listColapsed = false"><i class="fas fa-list"></i></a>
+              <a *ngIf="listColapsed === false" (click)="listColapsed = true; needConfirm = false"><i
+                  class="fas fa-times"></i></a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="listColapsed === false" class="list">
+          <div *ngFor="let rwrd of rewards | async">
+            <div class="row list-row" *ngIf="needConfirm === false">
+              <div class="col-3 form-group">
+                <p>{{ rwrd.points }}</p>
+              </div>
+              <div class="col-5 form-group">
+                <p>{{ rwrd.name }}</p>
+              </div>
+              <div class="col-2" *ngIf="admin !== '-LYH8J9VMbMIjrrTNnbU'">
+                <div *ngFor="let usr of users | async">
+                  <button (click)="needConfirm = true" *ngIf="admin === usr.key" [disabled]="rwrd.points > usr.points"
+                    class="btn btn-kart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-2">
+                <button (click)="deleteReward(rwrd.key)" *ngIf="admin === '-LYH8J9VMbMIjrrTNnbU'"
+                  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+              </div>
+              <div class="col-2">
+                <div *ngIf="admin === '-LYH8J9VMbMIjrrTNnbU'">
+                  <button (click)="editing(rwrd, rwrd.key)" class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="row list-row" *ngIf="needConfirm === true">
+              <div class="col-3 form-group">
+                <p>{{ rwrd.points }}</p>
+              </div>
+              <div class="col-5 form-group">
+                <p>{{ rwrd.name }}</p>
+              </div>
+              <div class="col-2" *ngIf="admin !== '-LYH8J9VMbMIjrrTNnbU'">
+                <div *ngFor="let usr of users | async">
+                  <button (click)="usr.points = usr.points - rwrd.points;
+                  userPointsUpdate(usr, usr.key); needConfirm = false; password = ''" *ngIf="admin === usr.key"
+                    [disabled]="rwrd.points > usr.points || password !== '141320141234'" class="btn btn-kart">
+                    <i class="fas fa-check"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+#rewards {
+    color: white;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.rewards-creator {
+    padding-top: 2rem;
+}
+
+.input-label {
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.reward-input {
+    background-color: rgb(77, 77, 77);
+    border: none;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-create-rwd {
+    background-color: rgb(202, 112, 3);
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+}

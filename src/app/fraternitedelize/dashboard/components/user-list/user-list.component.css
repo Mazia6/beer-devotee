@@ -1,0 +1,62 @@
+#user-list {
+    background-color: rgb(90, 90, 90);
+    color: white;
+    border-radius: 15px;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.list-header {
+    padding-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.list-body {
+    max-height: 15rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.list-row {
+    background-color: rgb(124, 124, 124);
+    border-top: 1px solid rgb(90, 90, 90);
+    border-bottom: 1px solid rgb(90, 90, 90);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-row:first-child {
+    border-top: none;
+}
+
+.list-row:last-child {
+    border-bottom: none;
+}
+
+.edit-input {
+    min-width: 12rem;
+    background-color: rgb(65, 65, 65);
+    color: white;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-delete {
+    background-color: #71010c;
+    border: none;
+    color: white;
+}
+
+.btn-edit {
+    background-color: rgb(202, 112, 3);
+    border: none;
+    color: white
+}

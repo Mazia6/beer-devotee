@@ -1,0 +1,38 @@
+#nav {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(202, 112, 3);
+    color: white;
+}
+
+.title {
+    font-weight: 700;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.nav-user-name {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.list {
+    list-style: none;
+}
+
+.list-item {
+    font-size: 1.2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-icon {
+    padding: 1rem;
+}

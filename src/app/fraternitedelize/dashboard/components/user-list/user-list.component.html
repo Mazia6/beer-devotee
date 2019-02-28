@@ -1,0 +1,32 @@
+<div id="user-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="list-body">
+          <div class="row list-row" *ngFor="let user of users | async">
+            <div class="col">
+              <p *ngIf="editing === false">{{ user.name }}</p>
+              <input class="form-control edit-input" *ngIf="editing === true" [(ngModel)]="user.name">
+            </div>
+            <div class="col">
+              <p *ngIf="editing === false">{{ user.lastGetPoints | date: 'dd/mm/yyyy' }}</p>
+              <input class="form-control edit-input" *ngIf="editing === true" [(ngModel)]="user.cpf">
+            </div>
+            <div class="col">
+              <p *ngIf="editing === false">{{ user.points }} pts</p>
+              <input class="form-control edit-input" *ngIf="editing === true" [(ngModel)]="user.points">
+            </div>
+            <div class="col">
+              <button [disabled]="user.key === '-LYH8J9VMbMIjrrTNnbU'" (click)="deleteUser(user.key)" class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="col" *ngIf="editing === false">
+              <button (click)="editing = true" class="btn btn-edit"><i class="fas fa-edit"></i></button>
+            </div>
+            <div class="col" *ngIf="editing === true">
+              <button (click)="editUser(user, user.key)" class="btn btn-edit"><i class="fas fa-check"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

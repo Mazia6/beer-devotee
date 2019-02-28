@@ -1,0 +1,23 @@
+<div id="not-found-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 box">
+        <h1>404 - PAGE NOT FOUND</h1>
+        <h2>Essa página não existe!</h2>
+        <div class="row">
+          <div class="col-12">
+            <div class="init" *ngIf="dash === false">
+              <p>Essa página não foi desenvolvida, por favor, se direcione para a <a routerLink="/fraternitedelize/init"
+                  class="no-decoration">tela de início!</a></p>
+              <div class="home">
+                <a class="no-decoration" routerLink="/fraternitedelize/init"><i class="fas fa-home home-icon"></i></a>
+              </div>
+            </div>
+            <p *ngIf="dash === true">Essa página não foi desenvolvida, use a aba lateral para seguir para alguma outra
+              tela que deseja!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

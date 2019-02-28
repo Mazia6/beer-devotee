@@ -1,0 +1,94 @@
+#get-points {
+    background-color: rgb(23, 32, 25);
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.location {
+    padding-top: 2rem;
+    color: white;
+}
+
+.page-selct {
+    padding-top: 2rem;
+}
+
+.points-page-a {
+    cursor: pointer;
+}
+
+.first-sect {
+    margin-bottom: 1rem;
+}
+
+.confirm-input {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+.your-points {
+    margin-top: 4rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: white;
+}
+
+.points-sect {
+    background-color: rgb(90, 90, 90);
+    border: 1px black solid;
+    border-radius: 15px;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: rgb(192, 192, 192);
+}
+
+
+.you-have {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.points-btn {
+    background-color: rgb(202, 112, 3);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.points-btn:disabled {
+    background-color: rgb(90, 90, 90);
+    color: rgb(148, 148, 148);
+}
+
+.points-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.pts-sect {
+    max-height: 6rem;
+}
+
+.get-points-button-sect {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.points {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0;
+}

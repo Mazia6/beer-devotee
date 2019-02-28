@@ -1,0 +1,46 @@
+#init {
+    background-color: rgb(37, 37, 37);
+    text-align: center;
+    color: rgb(226, 226, 226);
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.left {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.btn-sect {
+    padding-top: 2rem;
+}
+
+.login-sect {
+    text-align: center;
+}
+
+.cpf-input {
+    background-color: rgb(71, 71, 71);
+    border: none;
+    color: rgb(216, 216, 216);
+    text-align: center;
+}
+
+.hide-btn {
+    display: none;
+    margin-top: 1rem;
+}
+
+.btn-login {
+    padding: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgb(202, 112, 3);
+    color: black;
+}
+
+.display {
+    display: initial;
+}

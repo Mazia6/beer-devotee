@@ -1,0 +1,57 @@
+#register {
+    text-align: center;
+    background-color: rgb(30, 41, 31);
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.go-home {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: white;
+}
+
+.home-icon {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.inputs-box {
+    background-color: rgb(90, 90, 90);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 15px;
+    color: white;
+}
+
+.register-input {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+.btn-register {
+    background-color: rgb(202, 112, 3);
+    color: black;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 2rem;
+}
+
+.btn-register:disabled {
+    background-color: rgb(66, 66, 66);
+    color: rgb(151, 151, 151);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 2rem;
+}
+
+.invalid-input-alert {
+    color: rgb(253, 135, 135);
+}

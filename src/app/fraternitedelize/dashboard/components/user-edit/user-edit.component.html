@@ -1,0 +1,47 @@
+<div id="edit-user">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form>
+          <div class="row" *ngFor="let user of users | async">
+            <div class="col-12">
+              <div *ngIf="userKey === user.key" class="form-group">
+                <label class="input-label">CPF</label>
+                <input type="tel" min="1" max="11" disabled class="form-control user-edit-input" [(ngModel)]="user.cpf"
+                  name="cpf"  />
+              </div>
+            </div>
+            <div class="col-12">
+              <div *ngIf="userKey === user.key" class="form-group">
+                <label class="input-label">Nome</label>
+                <input type="text" min="1" class="form-control user-edit-input" [(ngModel)]="user.name"
+                   name="name" />
+              </div>
+            </div>
+            <div class="col-12">
+              <div *ngIf="userKey === user.key" class="form-group">
+                <label class="input-label">Email</label>
+                <input type="email" min="1" class="form-control user-edit-input" [(ngModel)]="user.email" 
+                  name="email" />
+              </div>
+            </div>
+            <div class="col-12">
+              <div *ngIf="userKey === user.key" class="form-group">
+                <label class="input-label">Celular</label>
+                <input type="tel" min="1" max="11" class="disabled form-control user-edit-input" [(ngModel)]="user.phone"
+                  name="phone"  />
+              </div>
+            </div>
+            <div *ngIf="userKey === user.key" class="container">
+              <div class="row">
+                <div class="col-12">
+                  <button (click)="onSubmit(user, user.key)" type="submit" class="btn btn-edit-user">Atualizar Usuário</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

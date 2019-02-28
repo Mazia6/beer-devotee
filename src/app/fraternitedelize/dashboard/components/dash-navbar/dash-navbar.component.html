@@ -1,0 +1,39 @@
+<div id="nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a (click)="isColapsed = false" *ngIf="isColapsed === true"><i class="fas fa-bars menu-icon"></i></a>
+        <a (click)="isColapsed = true" *ngIf="isColapsed === false"><i class="fas fa-times menu-icon"></i></a>
+        <div *ngIf="isColapsed === false">
+          <div class="user-name" *ngFor="let user of userInfo | async">
+            <p *ngIf="userUrl === user.key" class="nav-user-name">{{ user.name }}</p>
+          </div>
+          <div class="menu-list">
+            <div *ngFor="let user of userInfo | async">
+              <div *ngIf="userUrl !== '-LYH8J9VMbMIjrrTNnbU'" class="list row">
+                <div *ngIf="userUrl === user.key" class="list-item col-4"><a (click)="isColapsed = true"
+                    class="no-decoration" routerLink="/dash/user/{{user.key}}/get-points">Pontos</a></div>
+                <div *ngIf="userUrl === user.key" class="list-item col-4"><a (click)="isColapsed = true"
+                    class="no-decoration" routerLink="/dash/user/{{user.key}}/config">Config</a></div>
+                <div *ngIf="userUrl === user.key" class="list-item col-4">
+                  <p><a class="no-decoration" routerLink="/fraternitedelize/init">Logout</a></p>
+                </div>
+              </div>
+            </div>
+            <div *ngFor="let user of userInfo | async">
+              <div *ngIf="userUrl === '-LYH8J9VMbMIjrrTNnbU'" class="list row">
+                <div *ngIf="userUrl === user.key" class="list-item col-4"><a (click)="isColapsed = true"
+                    class="no-decoration" routerLink="/dash/admn/{{user.key}}/rewards-setup">Premios</a></div>
+                <div *ngIf="userUrl === user.key" class="list-item col-4"><a (click)="isColapsed = true"
+                    class="no-decoration" routerLink="/dash/admn/{{user.key}}/users-setup">Users</a></div>
+                <div *ngIf="userUrl === user.key" class="list-item col-4">
+                  <p><a class="no-decoration" routerLink="/fraternitedelize/init">Logout</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

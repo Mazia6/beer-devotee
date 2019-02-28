@@ -1,0 +1,34 @@
+#edit-user {
+    background-color: rgb(90, 90, 90);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.input-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.user-edit-input {
+    background-color: rgb(47, 47, 47);
+    color: rgb(194, 194, 194);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.user-edit-input:disabled {
+    background-color: rgb(83, 83, 83);
+    color: rgb(47, 47, 47);
+}
+
+.btn-edit-user {
+    margin-top: 2rem;
+    background-color: rgb(202, 112, 3);
+    color: white
+}
