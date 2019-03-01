@@ -94,6 +94,10 @@ export class RewardListComponent implements OnInit {
   
   userPointsUpdate(user: User, key: string) {
     this.userService.updateUser(user, key);
+    this.toastr.success(
+      'Prêmio resgatado com sucesso!',
+      'Aproveite!'
+    )
   }
 
   getUsers() {

@@ -8,7 +8,7 @@ import { Reward } from '../shared';
 })
 export class RewardsService {
 
-  baseUrl = 'https://lafraternitedelize-api.firebaseio.com/'
+  baseUrl = 'https://devoteesdelize-api.firebaseio.com/'
 
   constructor(private angularDb: AngularFireDatabase) { }
 

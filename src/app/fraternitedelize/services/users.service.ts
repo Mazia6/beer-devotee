@@ -7,7 +7,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
   providedIn: 'root'
 })
 export class UsersService {
-  baseUrl = 'https://lafraternitedelize-api.firebaseio.com/'
+  baseUrl = 'https://devoteesdelize-api.firebaseio.com/'
 
   constructor(private angularDb: AngularFireDatabase) { }
 

@@ -8,10 +8,10 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.example.lafraternitedelize"
+      "PACKAGE_NAME": "com.example.devoteesdelize"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.example.lafraternitedelize"
+      "PACKAGE_NAME": "com.example.devoteesdelize"
     }
   },
   "dependent_plugins": {}
