@@ -4,6 +4,7 @@ import { UserDataService } from 'src/app/fraternitedelize/services/user-data.ser
 import { Router } from '@angular/router';
 import { User } from 'src/app/fraternitedelize/shared';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-edit',
@@ -18,6 +19,7 @@ export class UserEditComponent implements OnInit {
   userKey = '';
 
   constructor(
+    private toastr: ToastrService,
     private userService: UsersService,
     private userDataServce: UserDataService,
     private router: Router
@@ -43,12 +45,16 @@ export class UserEditComponent implements OnInit {
     this.getUserInfo();
   }
 
-  onSubmit(user: User, key: string) {
-    this.userService.updateUser(user, key);
-  }
-
   getUserInfo() {
     this.users = this.userService.getAllUsers();
+  }
+
+  onSubmit(user: User, key: string) {
+    this.userService.updateUser(user, key);
+    this.toastr.warning(
+      'Informações atualizadas com sucesso!',
+      'Usuário atualizado!'
+    )
   }
 
 }

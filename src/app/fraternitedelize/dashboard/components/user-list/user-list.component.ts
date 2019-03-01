@@ -3,6 +3,7 @@ import { UsersService } from 'src/app/fraternitedelize/services';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/fraternitedelize/shared';
 import { UserDataService } from 'src/app/fraternitedelize/services/user-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-list',
@@ -17,6 +18,7 @@ export class UserListComponent implements OnInit {
   key: string = '';;
 
   constructor(
+    private toastr: ToastrService,
     private userService: UsersService,
     private userDataService: UserDataService
   ) { }
@@ -45,11 +47,19 @@ export class UserListComponent implements OnInit {
 
   editUser(user: User, key: string) {
     this.userService.updateUser(user, key);
+    this.toastr.warning(
+      'Informações atualizadas com sucesso!',
+      'Usuário atualizado!'
+    )
     this.editing = false;
   }
 
   deleteUser(key: string) {
     this.userService.deleteUser(key);
+    this.toastr.warning(
+      'Usuário deletado com sucesso!',
+      'Usuário deletado!'
+    )
   }
 
 }

@@ -41,6 +41,14 @@
     color: black;
 }
 
+.btn-register {
+    padding: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgb(13, 218, 139);
+    color: black;
+}
+
 .display {
     display: initial;
 }

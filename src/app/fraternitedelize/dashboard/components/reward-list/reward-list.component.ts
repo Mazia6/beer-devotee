@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Reward, User } from 'src/app/fraternitedelize/shared';
 import { Router } from '@angular/router';
 import { UserDataService } from 'src/app/fraternitedelize/services/user-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reward-list',
@@ -11,6 +12,7 @@ import { UserDataService } from 'src/app/fraternitedelize/services/user-data.ser
   styleUrls: ['./reward-list.component.css']
 })
 export class RewardListComponent implements OnInit {
+  adminPasswd = '141320141234'
   modal = false;
   needConfirm = false;
   confirmed = false;
@@ -26,6 +28,7 @@ export class RewardListComponent implements OnInit {
   user: User;
 
   constructor(
+    private toastr: ToastrService,
     private userService: UsersService,
     private userDataService: UserDataService,
     private rewardService: RewardsService,
@@ -70,8 +73,19 @@ export class RewardListComponent implements OnInit {
     })
   }
 
+  needAdmin() {
+    this.toastr.info(
+      'É necessária a senha do adminstrador',
+      'Necessário acesso'
+    )
+  }
+
   deleteReward(key: string) {
     this.rewardService.deleteReward(key);
+    this.toastr.warning(
+      'Prêmio deletado com sucesso!',
+      'Prêmio deletado!'
+    )
   }
 
   editReward(reward: Reward, key: string) {

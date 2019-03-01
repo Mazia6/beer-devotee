@@ -6,6 +6,7 @@ import { User } from 'src/app/fraternitedelize/shared';
 import * as moment from 'moment';
 import { UserDataService } from 'src/app/fraternitedelize/services/user-data.service';
 import { GetPointsService } from 'src/app/fraternitedelize/services/get-points.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-get-points',
@@ -16,7 +17,7 @@ export class GetPointsComponent implements OnInit {
   /* admin-passwd */
   adminPswd = '141320141234'
 
-  lat 
+  lat
   long
 
   moemaLat = -23.610792;
@@ -47,6 +48,7 @@ export class GetPointsComponent implements OnInit {
   user: User;
 
   constructor(
+    private toastr: ToastrService,
     private codeService: GetPointsService,
     private router: Router,
     private userService: UsersService,
@@ -79,6 +81,10 @@ export class GetPointsComponent implements OnInit {
 
   updatePoints(user: User, key: string) {
     this.userService.updateUser(user, key);
+    this.toastr.success(
+      'Você resgatou seus pontos diárioas',
+      'Parabéns pelo resgate'
+    )
   }
 
   getUserInfo() {
@@ -87,7 +93,7 @@ export class GetPointsComponent implements OnInit {
 
   getTomorrow() {
     this.pointsUpdate = moment().format('DD MM YYYY');
-    let getTomorrow = moment().add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0}).calendar();
+    let getTomorrow = moment().add(1, 'days').set({ hour: 0, minute: 0, second: 0, millisecond: 0 }).calendar();
     this.tomorrow = getTomorrow;
   }
 

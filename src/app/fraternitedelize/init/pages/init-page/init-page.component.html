@@ -19,17 +19,19 @@
                   <input [(ngModel)]="inputCpf" [ngModelOptions]="{standalone: true}" type="tel"
                     class="form-control cpf-input" aria-describedby="emailHelp" placeholder="Enter CPF">
                   <div *ngFor="let user of users | async; let i = index">
-                    <button *ngIf="inputCpf !== '' && inputCpf === user.cpf && inputCpf !== '141320141234'"
+                    <button (click)="welcome()" *ngIf="inputCpf !== '' && inputCpf === user.cpf && inputCpf !== '141320141234'"
                       [ngClass]="{display : inputCpf === user.cpf}" class="btn btn-login btn-lg hide-btn"
-                      routerLink="/dash/user/{{ user.key }}">Login como {{
+                      routerLink="/dash/user/{{ user.key }}">Olá {{
                       user.name }}</button>
-                    <button *ngIf="inputCpf !== '' && inputCpf === user.cpf && inputCpf === '141320141234'"
+                    <button (click)="welcome()" *ngIf="inputCpf !== '' && inputCpf === user.cpf && inputCpf === '141320141234'"
                       [ngClass]="{display : inputCpf === user.cpf}" class="btn btn-login btn-lg hide-btn"
-                      routerLink="/dash/admn/{{ user.key }}">Login como {{
+                      routerLink="/dash/admn/{{ user.key }}">Olá {{
                       user.name }}</button>
                   </div>
                   <div class="btn-sect">
-                    <button class="btn btn-login btn-lg" routerLink="/fraternitedelize/register">
+                    <small>Ainda não é cadastrado?</small>
+                    <br>
+                    <button class="btn btn-register btn-lg" routerLink="/fraternitedelize/register">
                       Cria sua conta</button>
                   </div>
                 </div>

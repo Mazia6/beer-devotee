@@ -38,7 +38,7 @@
               </div>
               <div class="col-2" *ngIf="admin !== '-LYH8J9VMbMIjrrTNnbU'">
                 <div *ngFor="let usr of users | async">
-                  <button (click)="needConfirm = true" *ngIf="admin === usr.key" [disabled]="rwrd.points > usr.points"
+                  <button (click)="needConfirm = true; needAdmin()" *ngIf="admin === usr.key" [disabled]="rwrd.points > usr.points"
                     class="btn btn-kart">
                     <i class="fas fa-shopping-cart"></i>
                   </button>
@@ -65,7 +65,7 @@
                 <div *ngFor="let usr of users | async">
                   <button (click)="usr.points = usr.points - rwrd.points;
                   userPointsUpdate(usr, usr.key); needConfirm = false; password = ''" *ngIf="admin === usr.key"
-                    [disabled]="rwrd.points > usr.points || password !== '141320141234'" class="btn btn-kart">
+                    [disabled]="rwrd.points > usr.points || password !== adminPasswd" class="btn btn-kart">
                     <i class="fas fa-check"></i>
                   </button>
                 </div>

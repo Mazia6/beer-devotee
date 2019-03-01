@@ -6,6 +6,8 @@ import { NgxMaskModule } from 'ngx-mask';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { FraternitedelizeComponent } from './fraternitedelize.component';
 import { NotFoundPageComponent } from './shared';
@@ -110,6 +112,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     NgxMaskModule.forRoot(),
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot(environment.gromaps)

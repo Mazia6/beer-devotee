@@ -25,7 +25,7 @@
               <div class="col-12">
                 <h1>Pegue aqui seus pontos diários</h1>
                 <div class="points-bottom row">
-                  <div class="col pts-sect">
+                  <div class="pts-sect">
                     <form *ngFor="let usr of users | async">
                       <div class="get-points-button-sect" *ngIf="userUrl === usr.key">
                         <div class="first-sect" *ngIf="userUrl === usr.key && pointsUpdate === usr.lastGetPoints">

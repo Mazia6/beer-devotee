@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { throttleTime } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-not-found-page',
@@ -11,9 +11,13 @@ export class NotFoundPageComponent implements OnInit {
   dash;
   init;
 
-  constructor(private router: Router) { }
+  constructor(
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.pageNotFound();
     if  (this.router.url.substring(0, 5) === '/dash') {
       this.dash = true;
     } else if (this.router.url.substring(0, 5) === '/frat') {
@@ -21,6 +25,13 @@ export class NotFoundPageComponent implements OnInit {
     } else {
       this.dash = false;
     }
+  }
+
+  pageNotFound() {
+    this.toastr.error(
+      'Essa página não existe!',
+      '404 - PAGE NOT FOUND'
+    );
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UsersService } from 'src/app/fraternitedelize/services';
-
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -17,6 +17,7 @@ export class InitPageComponent implements OnInit {
   pVar;
 
   constructor(
+    private toastr: ToastrService,
     private userService: UsersService
   ) { }
 
@@ -26,6 +27,13 @@ export class InitPageComponent implements OnInit {
 
   getAllUsers() {
     this.users = this.userService.getAllUsers()
+  }
+
+  welcome() {
+    this.toastr.success(
+      'Como é bom te ver aqui!',
+      'Oieeee'
+    )
   }
 
 }

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsersService } from 'src/app/fraternitedelize/services';
 import { User } from 'src/app/fraternitedelize/shared';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-register-page',
@@ -21,6 +23,7 @@ export class RegisterPageComponent implements OnInit {
   datePoints;
 
   constructor(
+    private toastr: ToastrService,
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router,
@@ -45,6 +48,8 @@ export class RegisterPageComponent implements OnInit {
   onSubmit() {
     this.userService.createUser(this.user);
     this.router.navigateByUrl(`/fraternitedelize`)
+    this.registred();
+    this.points();
     return this.user = new User();
   }
 
@@ -70,6 +75,20 @@ export class RegisterPageComponent implements OnInit {
 
   get inputBornDate() {
     return this.registerForm.get('brnDate');
+  }
+
+  registred() {
+    this.toastr.success(
+      'Seu usuário foi cadastrado com sucesso!',
+      'Cadastrado'
+    )
+  }
+
+  points() {
+    this.toastr.warning(
+      'Nós já resgatamos seus pontos de hoje!',
+      'Pontos diários!'
+    )
   }
 
 }

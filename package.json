@@ -3,16 +3,16 @@
     "displayName": "LaFraternite",
     "version": "1.0.0",
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
-    "main": "index.js",
+    "main": "./src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
+        "start": "ng serve --poll=2000",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "prod": "ng build --prod",
-        "deploy": "ng build --prod"
+        "build": "ng build --prod && cordova build android",
+        "cordova": "ng build --base-href . --output-path ./www"
     },
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
@@ -33,13 +33,16 @@
         "angularfire2": "^5.1.1",
         "bootstrap": "^4.2.1",
         "cordova-android": "^7.1.4",
+        "cordova-browser": "^5.0.4",
         "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-whitelist": "^1.3.3",
         "core-js": "^2.5.4",
         "firebase": "^5.8.2",
         "font-awesome": "^4.7.0",
+        "ionic": "^3.20.0",
         "moment": "^2.24.0",
         "ngx-mask": "^7.3.5",
+        "ngx-toastr": "^9.1.2",
         "rxjs": "6.0.0",
         "zone.js": "~0.8.26"
     },
@@ -70,7 +73,8 @@
             "cordova-plugin-device": {}
         },
         "platforms": [
-            "android"
+            "android",
+            "browser"
         ]
     }
 }
