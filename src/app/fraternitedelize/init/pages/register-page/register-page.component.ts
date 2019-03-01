@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UsersService } from 'src/app/fraternitedelize/services';
 import { User } from 'src/app/fraternitedelize/shared';
 import { ToastrService } from 'ngx-toastr';
+import * as moment from 'moment';
 
 
 @Component({
@@ -13,6 +14,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./register-page.component.css']
 })
 export class RegisterPageComponent implements OnInit {
+  eighteenYearAgo = moment().subtract(18, 'years').calendar()
+  kid: boolean;
+
   registerForm: FormGroup;
 
   cpf: Observable<any>;
@@ -36,7 +40,7 @@ export class RegisterPageComponent implements OnInit {
       genre: ['', Validators.required],
       cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
       phone: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
-      brnDate: ['', Validators.required]
+      bornDate: ['', Validators.required]
     })
 
     this.registerForm.valueChanges.subscribe();
@@ -74,7 +78,7 @@ export class RegisterPageComponent implements OnInit {
   }
 
   get inputBornDate() {
-    return this.registerForm.get('brnDate');
+    return this.registerForm.get('bornDate');
   }
 
   registred() {

@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxMaskModule } from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { ToastrModule } from 'ngx-toastr';
-
 
 import { FraternitedelizeComponent } from './fraternitedelize.component';
 import { NotFoundPageComponent } from './shared';

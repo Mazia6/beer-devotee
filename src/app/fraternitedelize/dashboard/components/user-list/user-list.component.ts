@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from 'src/app/fraternitedelize/shared';
 import { UserDataService } from 'src/app/fraternitedelize/services/user-data.service';
 import { ToastrService } from 'ngx-toastr';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-user-list',
@@ -11,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  today = moment().format('DD/MM/YYY');
   editing = false;
   users: Observable<any>;
   user: User;

@@ -41,8 +41,8 @@
             <div class="col-6">
               <div class="form-group">
                 <label>CPF</label>
-                <input formControlName="cpf" type="tel" min="1" max="11" class="form-control register-input"
-                  [(ngModel)]="user.cpf" name="cpf" placeholder="Apenas números" />
+                <input formControlName="cpf" type="tel" class="form-control register-input" [(ngModel)]="user.cpf"
+                  name="cpf" placeholder="Apenas números" />
                 <div *ngIf="!inputCpf.valid && inputCpf.touched">
                   <small *ngIf="!inputCpf.valid && inputCpf.touched" class="invalid-input-alert">CPF é um campo
                     obrigatório</small>
@@ -53,8 +53,8 @@
               </div>
               <div class="form-group">
                 <label>Celular</label>
-                <input formControlName="phone" type="tel" min="1" class="form-control register-input"
-                  [(ngModel)]="user.phone" name="phone" placeholder="Apenas números" />
+                <input formControlName="phone" type="tel" class="form-control register-input" [(ngModel)]="user.phone"
+                  name="phone" placeholder="Apenas números" />
                 <div *ngIf="!inputPhone.valid && inputPhone.touched">
                   <small *ngIf="!inputPhone.valid && inputPhone.touched" class="invalid-input-alert">Celular é um campo
                     obrigatório</small>
@@ -66,8 +66,9 @@
               </div>
               <div class="form-group">
                 <label>Nascimento</label>
-                <input formControlName="brnDate" type="date" min="1" max="8" class="form-control register-input"
-                  [(ngModel)]="user.bornDate" name="bornDate" />
+                <input formControlName="bornDate" type="tel" [dropSpecialCharacters]="false" mask="00/00/0000"
+                  class="form-control register-input" [(ngModel)]="user.bornDate" name="bornDate"
+                  placeholder="DD/MM/AAAA" />
                 <small *ngIf="!inputBornDate.valid && inputBornDate.touched" class="invalid-input-alert">Data de
                   nascimento é um campo
                   obrigatório</small>
@@ -76,7 +77,8 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <button [disabled]="!registerForm.valid" type="submit" class="btn btn-register">Criar conta</button>
+              <button [disabled]="!registerForm.valid" type="submit"
+                class="btn btn-register">Criar conta</button>
             </div>
           </div>
           <small class="alert">Ao se registrar será feito o resgate dos seus 10 pontos de hoje!</small>
