@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UsersService, RewardsService } from 'src/app/fraternitedelize/services';
+import { UsersService, RewardsService, TokenService } from 'src/app/fraternitedelize/services';
 import { Router } from '@angular/router';
 import { User } from 'src/app/fraternitedelize/shared';
 import * as moment from 'moment';
@@ -15,6 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class GetPointsComponent implements OnInit {
   /* admin-passwd */
+  password = '';
+  tokens: Observable<any>;
   adminPswd = '141320141234'
 
   lat
@@ -49,13 +51,14 @@ export class GetPointsComponent implements OnInit {
 
   constructor(
     private toastr: ToastrService,
-    private codeService: GetPointsService,
+    private tokenService: TokenService,
     private router: Router,
     private userService: UsersService,
     private userDataService: UserDataService
   ) { }
 
   ngOnInit() {
+    this.tokens = this.tokenService.getToken();
     this.user = new User();
     this.userDataService.currentUser.subscribe(data => {
 
@@ -119,4 +122,7 @@ export class GetPointsComponent implements OnInit {
     }
   }
 
+  deleteToken(key: string) {
+    this.tokenService.deleteToken(key);
+  }
 }

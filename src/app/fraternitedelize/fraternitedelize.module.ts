@@ -14,7 +14,7 @@ import { InitPageComponent, RegisterPageComponent } from './init/pages';
 import { DashPageComponent, AdminComponent, UserConfigPageComponent, RewardSetupComponent, SetupsComponent } from './dashboard/pages';
 import { GetPointsComponent } from './dashboard/pages/get-points/get-points.component';
 import { UserComponent } from './dashboard/pages/user/user.component';
-import { DashNavbarComponent, RewardListComponent, UserListComponent, UserEditComponent } from './dashboard/components';
+import { DashNavbarComponent, RewardListComponent, UserListComponent, UserEditComponent, GetTokenComponent } from './dashboard/components';
 import { environment } from 'src/environments/environment';
 
 const routes: Routes = [
@@ -132,7 +132,8 @@ const routes: Routes = [
     RewardSetupComponent,
     SetupsComponent,
     UserListComponent,
-    UserEditComponent
+    UserEditComponent,
+    GetTokenComponent
   ],
   exports: [
     FraternitedelizeComponent

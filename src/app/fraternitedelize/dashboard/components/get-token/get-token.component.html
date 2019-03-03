@@ -1,0 +1,15 @@
+<div id="token">
+  <div class="container">
+    <div class="col-12">
+      <div class="token-sect">
+        <h2 class="token-generator">Gerador de tokens</h2>
+        <div class="generator">
+          <button (click)="generateNewToken()" class="token-btn">Gerar um Token</button>
+          <div class="token-return" *ngFor="let tkn of tokens | async">
+            <p class="token-number">{{ tkn.number }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
