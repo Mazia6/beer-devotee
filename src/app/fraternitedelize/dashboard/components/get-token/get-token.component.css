@@ -1,5 +1,11 @@
 #token {
     text-align: center;
+    color: white;
+}
+
+.token-generated {
+    color: white;
+    font-size: 1rem;
 }
 
 .token-btn {

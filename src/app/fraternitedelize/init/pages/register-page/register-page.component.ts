@@ -19,7 +19,7 @@ export class RegisterPageComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  cpf: Observable<any>;
+  users: Observable<any>;
   user: User;
   key: string = '';
 
@@ -34,6 +34,7 @@ export class RegisterPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.users = this.userService.getAllUsers();
     this.registerForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -93,6 +94,10 @@ export class RegisterPageComponent implements OnInit {
       'Nós já resgatamos seus pontos de hoje!',
       'Pontos diários!'
     )
+  }
+
+  checkCpf() {
+    this.registerForm.get('cpf').setValue('');
   }
 
 }

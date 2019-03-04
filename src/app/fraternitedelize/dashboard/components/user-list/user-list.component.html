@@ -9,7 +9,7 @@
               <input class="form-control edit-input" *ngIf="editing === true" [(ngModel)]="user.name">
             </div>
             <div class="col">
-              <p *ngIf="editing === false">{{ user.lastGetPoints | date: 'dd/mm/yyyy' }}</p>
+              <p *ngIf="editing === false">{{ user.lastGetPoints | date: 'dd/MMM/yyyy' }}</p>
               <input class="form-control edit-input" *ngIf="editing === true" [(ngModel)]="user.cpf">
             </div>
             <div class="col">
