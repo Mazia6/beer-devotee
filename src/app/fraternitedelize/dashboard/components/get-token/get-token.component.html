@@ -3,14 +3,15 @@
     <div class="col-12">
       <div class="token-sect">
         <h2 class="token-generator">Gerador de tokens</h2>
+        <button [disabled]="!checked" (click)="generateNewToken()" class="token-btn">Gerar um Token</button>
         <div class="generator" *ngFor="let tkn of tokens | async">
-          <button *ngIf="tkn.number === null" (click)="generateNewToken()" class="token-btn">Gerar um Token</button>
           <div class="generated" *ngIf="tkn.number !== null">
             <p class="token-generated">Já existe um token gerado</p>
-            <small>Não é permitido gerar mais de um token por vez</small>
+            <small>Só é permitido gerar um  token por vez!</small>
           </div>
           <div class="token-return">
             <p class="token-number">{{ tkn.number }}</p>
+            <p class="hide">{{hasToken()}}</p>
           </div>
         </div>
       </div>
